@@ -34,7 +34,9 @@ public class PoohServer {
              var input = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
             while (true) {
                 var details = input.readLine().split(";");
-                if (details.length != 3) continue;
+                if (details.length != 3) {
+                    continue;
+                }
                 processMessage(details, new PrintWriter(out));
             }
         } catch (Exception e) {
